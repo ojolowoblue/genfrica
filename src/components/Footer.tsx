@@ -5,14 +5,14 @@ import { X, Facebook, Instagram, Send } from 'lucide-react';
 const Footer = () => {
   return (
     <div
-      className="w-full bg-black py-4 px-6 text-gray-400 
+      className="w-full bg-black py-10 px-20 max-md:px-[30px] text-gray-400 
                  flex flex-col md:flex-row 
                  items-center
                  justify-between
                  gap-4 md:gap-6"
     >
       <Image
-        src="/genfricalogo.png"
+        src="/logo.png"
         alt="Genfrica Logo"
         width={120}
         height={16}
