@@ -1,6 +1,6 @@
 import { Text, Flex } from '@radix-ui/themes';
 import Image from 'next/image';
-import { X, Facebook, Instagram, Send } from 'lucide-react';
+import { X, Linkedin, Instagram, Send, Music2 } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -24,22 +24,36 @@ const Footer = () => {
       </Text>
 
       <Flex className="gap-4">
-        <X
-          size={20}
-          className="cursor-pointer hover:text-white transition-colors"
-        />
-        <Facebook
-          size={20}
-          className="cursor-pointer hover:text-white transition-colors"
-        />
-        <Instagram
-          size={20}
-          className="cursor-pointer hover:text-white transition-colors"
-        />
-        <Send
-          size={20}
-          className="cursor-pointer hover:text-white transition-colors"
-        />
+        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px] ">
+          <Image
+            alt="Twitter Icon"
+            src="/X.png"
+            width={14}
+            height={18}
+            className="cursor-pointer hover:text-white transition-colors h-[13px]"
+          />
+        </span>
+        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px] ">
+          <Image
+            alt="Tiktok Icon"
+            src="/tiktok.png"
+            width={14}
+            height={18}
+            className="cursor-pointer hover:text-white transition-colors h-[15px]"
+          />
+        </span>
+        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px]">
+          <Instagram
+            size={20}
+            className="cursor-pointer hover:text-white transition-colors"
+          />
+        </span>
+        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px]">
+          <Linkedin
+            size={20}
+            className="cursor-pointer hover:text-white transition-colors"
+          />
+        </span>
       </Flex>
     </div>
   );
