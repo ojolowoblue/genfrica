@@ -55,11 +55,11 @@ const Home = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9, duration: 0.5, ease: 'easeOut' }}
             >
-              <Box className="relative w-full max-w-sm">
+              <Box className="relative w-full max-w-sm ">
                 <Search
                   size={24}
                   color="white"
-                  className="absolute left-2 top-2 "
+                  className="absolute left-2 top-3 "
                 />
                 <CustomInput
                   value={''}
