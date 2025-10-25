@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Search } from 'lucide-react';
-import { Box, Flex, Text } from '@radix-ui/themes';
+import { Box, Container, Flex, Section, Text } from '@radix-ui/themes';
 import { motion } from 'framer-motion';
 
 import CustomInput from '@/components/CustomInput';
@@ -14,7 +14,8 @@ const Home = () => {
         direction={{ initial: 'column', md: 'row' }}
         justify="between"
         gap="8"
-        align={{ initial: 'start', md: 'center' }}
+        // align={{ initial: 'start', md: 'center' }}
+        align="center"
         className="mb-10"
       >
         <Flex direction="column" className="flex-1">
@@ -71,9 +72,9 @@ const Home = () => {
             </motion.div>
           </Flex>
         </Flex>
-
+        {/* <Container className="text-center text-gray-600 relative flex flex-col justify-end sm:justify-center items-center px-"> */}
         <motion.div
-          className="flex-1 flex justify-end"
+          className="flex-1 flex justify-end sm:justify-center sm:w-full"
           animate={{ y: [0, -10, 0] }} //
           transition={{
             duration: 2,
@@ -81,14 +82,29 @@ const Home = () => {
             ease: 'easeInOut',
           }}
         >
-          <Image
-            src="/amala.png"
-            alt="Food image"
-            width={477}
-            height={573}
-            className="rounded-3xl w-[477px] max-w-full md:max-w-2xl object-cover"
-          />
+          <Box className="relative flex justify-center items-center">
+            {/* DIV was intentionally used here cuz other components like Box, Flex, Section did center the blur properly on all screen sizes */}
+            {/* Blurred glow background */}
+            <div className="fixed inset-0 flex justify-center items-center z-0">
+              <div className="bg-amber-400 w-96 h-96 md:w-124 md:h-124 rounded-full blur-3xl opacity-40"></div>
+            </div>
+
+            {/* Foreground content */}
+            <div className="relative z-10 text-center">
+              <Image
+                src="/amala.png"
+                alt="Food image"
+                width={477}
+                height={573}
+                className="rounded-3xl w-[477px] max-w-full md:max-w-2xl object-cover mx-auto"
+              />
+              <Text className="mt-4 text-gray-700 text-sm">
+                Search Results for Amala & Eforiro
+              </Text>
+            </div>
+          </Box>
         </motion.div>
+        {/* </Container> */}
       </Flex>
     </Box>
   );
