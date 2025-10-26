@@ -1,6 +1,25 @@
 import { Text, Flex } from '@radix-ui/themes';
 import Image from 'next/image';
-import { Linkedin, Instagram } from 'lucide-react';
+import Link from 'next/link';
+
+const socialLinks = [
+  { name: 'X', url: '#', icon: 'x.svg' },
+  {
+    name: 'LinkedIn',
+    url: '#',
+    icon: 'linkedin.svg',
+  },
+  {
+    name: 'Tiktok',
+    url: '#',
+    icon: 'tiktok.svg',
+  },
+  {
+    name: 'Instagram',
+    url: '#',
+    icon: 'ig.svg',
+  },
+];
 
 const Footer = () => {
   return (
@@ -24,36 +43,20 @@ const Footer = () => {
       </Text>
 
       <Flex className="gap-4">
-        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px] ">
-          <Image
-            alt="Twitter Icon"
-            src="/X.png"
-            width={14}
-            height={18}
-            className="cursor-pointer hover:text-white transition-colors h-[13px]"
-          />
-        </span>
-        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px] ">
-          <Image
-            alt="Tiktok Icon"
-            src="/tiktok.png"
-            width={14}
-            height={18}
-            className="cursor-pointer hover:text-white transition-colors h-[15px]"
-          />
-        </span>
-        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px]">
-          <Instagram
-            size={20}
-            className="cursor-pointer hover:text-white transition-colors"
-          />
-        </span>
-        <span className="flex justify-center items-center bg-gray-900 rounded-4xl w-[28px] h-[28px]">
-          <Linkedin
-            size={20}
-            className="cursor-pointer hover:text-white transition-colors"
-          />
-        </span>
+        {socialLinks.map(link => (
+          <Link
+            href={link.url}
+            key={link.name}
+            className="flex justify-center items-center rounded-full bg-[#161616] w-[40px] h-[40px]"
+          >
+            <Image
+              src={`/icons/${link.icon}`}
+              width={16}
+              height={16}
+              alt={link.name}
+            />
+          </Link>
+        ))}
       </Flex>
     </div>
   );
