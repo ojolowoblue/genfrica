@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Search } from 'lucide-react';
-import { Box, Container, Flex, Section, Text } from '@radix-ui/themes';
+import { Box, Flex, Text } from '@radix-ui/themes';
 import { motion } from 'framer-motion';
 
 import CustomInput from '@/components/CustomInput';

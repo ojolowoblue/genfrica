@@ -1,6 +1,6 @@
 import { Text, Flex } from '@radix-ui/themes';
 import Image from 'next/image';
-import { X, Linkedin, Instagram, Send, Music2 } from 'lucide-react';
+import { Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
